@@ -26,8 +26,9 @@ You now have your own private copy. Everything Claude builds is saved there.
 The environment is the cloud computer Claude works on. You decide which websites it can reach.
 1. At claude.ai/code, open the **environment selector** under the message box. At the bottom, click **New environment**. (In the desktop app: the first control under the prompt box, then **Cloud**.)
 2. Name it `AI OS`.
-3. **Network access:** choose **Custom**, tick **Also include default list of common package managers**, and paste this list:
+3. **Network access:** choose **Limited**. Keep **Allow package managers** ticked. Paste this list into **Allowed domains**:
    ```
+   supabase.com
    *.supabase.com
    *.supabase.co
    *.vercel.app
@@ -39,18 +40,19 @@ The environment is the cloud computer Claude works on. You decide which websites
    render.com
    resend.com
    developers.google.com
+   support.google.com
    ```
-   (These let Claude read each tool's documentation and check your live site. It can always reach GitHub.)
+   (These let Claude read each tool's documentation and check your live site. It can always reach GitHub. If you use a call recorder such as Granola or Fireflies, add its website too, for example `granola.ai` and `*.granola.ai`.)
 4. Leave **environment variables** empty. Your keys never go here: they go straight into the Vercel and Render dashboards.
 5. Click **Add environment**.
 
 ## Step 4: Start
 1. At claude.ai/code (or the desktop app's Code tab with your **AI OS** cloud environment selected), choose your `my-ai-os` repository in the **repository selector** under the message box.
-2. Set the mode to **Accept edits**.
+2. Set the mode to **Auto** (the mode dropdown under the message box). Claude then asks you only before risky steps.
 3. Type: **set up my AI OS**
 
 Claude will:
-1. **Phase 1, the plan:** ask you about 13 short questions and write your plan, your choices and the list of accounts you need.
+1. **Phase 1, the plan:** ask you 14 short questions and write your plan, your choices and the list of accounts you need.
 2. **Phase 2, the app:** your website with sign-in and a Today page for each person.
 3. **Phase 3, the agent server:** your first agent, running 24/7.
 4. **Phase 4, the Agents tab:** run, pause and approve.
@@ -60,9 +62,9 @@ It stops every time you need to do something yourself.
 ## Three rules
 1. **Never paste a secret key, password or API key into the chat.** Claude tells you which dashboard it goes in, and you paste it there yourself.
 2. **Nothing goes live without your OK.** Claude saves each piece of work as a pull request. You check the preview link, then click **Merge** on GitHub to publish it.
-3. **Read every permission request before you approve it.**
+3. **Read every permission request before you approve it.** In Auto mode there are fewer of them, so each one matters.
 
 ## Coming back later
 Go to claude.ai/code (or the Code tab), choose the **AI OS** environment and your repository, start a new session and type: **where are we?** It works from any computer, or your phone.
 
-AI OS Installer v1.1 · AI Agent Academy 4
+AI OS Installer v1.2 · AI Agent Academy 4

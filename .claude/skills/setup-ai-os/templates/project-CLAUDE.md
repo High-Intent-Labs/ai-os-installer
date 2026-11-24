@@ -10,7 +10,7 @@ At the start of every session, read this file, then `plan/MEMORY.md` (handoff se
 ## Key facts
 - Mode: <just me | team>. Access: <rule>. Sign-in: <method>. Admins: <emails>.
 - Time zone: <tz>. AI budget: <$> a month (OpenRouter limit).
-- Owner's own email addresses and company domains (so agents know who "you" and colleagues are): <list>.
+- Owner's own email addresses and company domains (so agents know who "you" and colleagues are): <list from question 3>.
 
 ## Stack and where things live
 - Code: the owner's private GitHub repo, worked on in Claude Code cloud sessions. Website code at the root (Next.js, TypeScript, Tailwind). Agent server in `agent/`. Shared logic in `lib/` (no website-only code there).

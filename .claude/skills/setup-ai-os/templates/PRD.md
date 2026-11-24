@@ -30,7 +30,7 @@ Installable on phone home screens.
 - Call transcripts: <tool> via <API / webhook / daily import> (<admin only in v1>)
 
 ## Rules for every agent
-- AI suggests, people decide. Agents never: <list from question 13>.
+- AI suggests, people decide. Agents never: <list from question 14>.
 - Every claim cites a numbered source; uncited lines are dropped.
 - People are identified by email address, never first name.
 - A failed source shows a warning in the output and in Settings. Nothing fails silently.

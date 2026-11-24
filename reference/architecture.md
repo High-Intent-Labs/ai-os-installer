@@ -58,6 +58,6 @@ At every run, build the system prompt fresh: (1) the agent's CLAUDE.md (edited v
 5. **Show each source and its last sync.** A source failing during a run shows as a warning in the output and in Settings.
 
 ## Models
-- Build the model picker from OpenRouter's public model list, filtered to providers with **zero data retention** and, for JSON agents, **structured output**. On every call send OpenRouter's privacy options (no data collection, ZDR). Check OpenRouter's current docs for the exact parameter names.
+- Build the model picker from OpenRouter's public model list, filtered to providers with **zero data retention** (`GET /api/v1/endpoints/zdr`) and, for JSON agents, **structured output**. On every call send OpenRouter's privacy options: `provider: { zdr: true, data_collection: "deny", require_parameters: true }`. Cost comes back in `usage.cost` on every response. Check OpenRouter's current docs in case names change.
 - Mid-range model for most writing (for example the morning brief), a top model as backup, small cheap models for narrow jobs (sorting a task into a category). Some agents need no model at all (counts, calendar flags): use plain code.
 - Set the thinking/effort level and max output tokens explicitly. Treat "cut off at the length limit" as a clear error.

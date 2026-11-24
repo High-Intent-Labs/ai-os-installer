@@ -4,14 +4,15 @@ Use Better Auth for everything. Check its current docs before writing code: opti
 
 ## Sign-in methods
 - **Google:** Better Auth's Google provider. Ask for offline access so a refresh token is stored (the agent server renews access tokens itself to read calendars at night). Store tokens only in the database (`account` table).
-- **Email and password:** Better Auth's email and password option, with **email verification required** and **password reset**, both sending through Resend. Minimum password length 12. Rate-limit sign-in attempts.
+- **Email and password:** Better Auth's email and password option, with **email verification required** and **password reset**, both sending through Resend. Minimum password length 12. Rate-limit sign-in attempts with `rateLimit.storage: "database"` (memory storage doesn't work on Vercel, where each request can run on a new server). Better Auth hides whether an email exists, so a refused sign-up looks like a success: after sign-up always show "If this email is allowed, you'll get a verification link."
+- **Access checks:** put them in Better Auth's `user.validateUserInfo` hook (runs on sign-up, account linking and Google sign-in), and block removed people in `databaseHooks.session.create.before`. Check the current docs for the names.
 - **Both:** enable both. A person who signed up with email and password can still connect Google Calendar later from Settings (Better Auth account linking); require the Google email to be verified.
 
 ## Just me
-- `ALLOWED_EMAILS` = the owner's email(s). Refuse every other sign-in and sign-up, server side.
+- `ALLOWED_EMAILS` = the owner's email(s) from question 3. Refuse every other sign-in and sign-up, server side.
 - If Workspace and Google sign-in: also check the hosted-domain claim.
 
-## Team: access rules (from question 3)
+## Team: access rules (from question 4)
 Enforce in a server-side hook that runs on every sign-up and every sign-in (not just in the page):
 - **Company domain:** allow only emails ending `@<domain>` (`ALLOWED_DOMAINS`, comma-separated). For Google, also check the hosted-domain claim.
 - **Invited only:** allow only emails in `invites` that are not expired or revoked. Admins add invites in Settings; the app emails an invite link (Resend) or the admin shares the link.
