@@ -53,13 +53,13 @@ Only for email and password sign-in.
 3. **Keys** → Create key: set **Credit limit** to their monthly budget and the reset to **Monthly**. Paste the key into Render only (`OPENROUTER_API_KEY`). Never into Vercel or the browser.
 
 ## Claude cloud environment: network secret for the agent server
-So Claude can test agents with "Run now" without ever seeing the secret:
-1. At claude.ai/code, open the environment selector under the message box, hover **AI OS** and click the settings icon on its right.
+So Claude can reach the agent server and test agents with "Run now" without ever seeing the secret. They do this on the new-session screen (the environment menu disappears once a session has started):
+1. At claude.ai/code, click the first control under the message box (the cloud icon): it opens the environment menu. Under **Cloud**, hover the environment they use (usually **Default**) and click the settings icon on its right.
 2. Click the **Network secrets** row, then **Add secret**.
 3. Keep **Secret type: Bearer**. **Allowed websites:** `<their-service>.onrender.com`. Under **Custom headers**, leave Header name `Authorization` and Prefix `Bearer`, and paste the same `AGENT_SECRET` as on Render into **Value**.
 4. Click **Add**. It saves straight away. The value can't be viewed again; to change it, delete and re-add.
 5. Team or Enterprise plan without the Owner role: the form is shorter. **Host:** `<their-service>.onrender.com` (no `*.`), **Secret type: Token**, paste the value into **Token**, click **Add secret**.
-6. Start a new session so it picks the secret up.
+6. Start a new session so it picks the secret up. Claude can now reach `<their-service>.onrender.com`, even though the environment's network setting is unchanged.
 
 ## Call recorder
 See `call-recorders.md`.

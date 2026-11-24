@@ -27,34 +27,12 @@ You now have your own private copy. Everything Claude builds is saved there. (Ma
 2. If asked, click **Sign in with GitHub** and approve.
 3. Install the **Claude GitHub App** on your account and give it access to your new repository: github.com/apps/claude/installations/new. (Claude needs it to work on a private repository.)
 
-## Step 3: Set up your cloud environment (once)
-The environment is the cloud computer Claude works on. You decide which websites it can reach.
-1. At claude.ai/code, open the **environment selector** under the message box. At the bottom, click **New environment**. (In the desktop app: the first control under the prompt box, then **Cloud**.)
-2. Name it `AI OS`.
-3. **Network access:** choose **Limited**. Keep **Allow package managers** ticked. Paste this list into **Allowed domains**:
-   ```
-   supabase.com
-   *.supabase.com
-   *.supabase.co
-   *.vercel.app
-   *.onrender.com
-   openrouter.ai
-   better-auth.com
-   *.better-auth.com
-   vercel.com
-   render.com
-   resend.com
-   developers.google.com
-   support.google.com
-   ```
-   (These let Claude read each tool's documentation and check your live site. It can always reach GitHub. If you use a call recorder such as Granola or Fireflies, add its website too, for example `granola.ai` and `*.granola.ai`.)
-4. Leave **environment variables** empty. Your keys never go here: they go straight into the Vercel and Render dashboards.
-5. Click **Add environment**.
-
-## Step 4: Start
-1. At claude.ai/code (or the desktop app's Code tab with your **AI OS** cloud environment selected), choose your `my-ai-os` repository in the **repository selector** under the message box.
-2. Set the mode to **Auto** (the mode dropdown under the message box). Claude then asks you only before risky steps.
+## Step 3: Start
+1. At **claude.ai/code** (or the **Code** tab in the Claude desktop app), click **Repo** under the message box and choose your `my-ai-os` repository.
+2. Set the permission mode to **Auto**: under the message box, click the control that shows the mode (it reads **Accept edits**, **Plan** or **Auto**) and choose **Auto**. If it already says Auto, leave it. Claude then asks you only before risky steps.
 3. Type: **set up my AI OS**
+
+You don't need to set anything else up: Claude works on its standard cloud computer.
 
 Claude will:
 1. **Phase 1, the plan:** ask you 14 short questions and write your plan, your choices and the list of accounts you need.
@@ -70,6 +48,6 @@ It stops every time you need to do something yourself.
 3. **Read every permission request before you approve it.** In Auto mode there are fewer of them, so each one matters.
 
 ## Coming back later
-Go to claude.ai/code (or the Code tab), choose the **AI OS** environment and your repository, start a new session and type: **where are we?** It works from any computer, or your phone.
+Go to claude.ai/code (or the Code tab), choose your repository, start a new session and type: **where are we?** It works from any computer, or your phone.
 
-AI OS Installer v1.2.1 · AI Agent Academy 4
+AI OS Installer v1.3 · AI Agent Academy 4

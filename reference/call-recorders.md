@@ -1,6 +1,6 @@
 # Connecting call transcripts
 
-Any call recorder works. What matters is how transcripts reach the agent server. **Check the tool's current docs and the owner's plan before building**: API access often depends on the plan. The tool's docs site is probably not on the environment's allowed list yet: ask them to add it (for example `granola.ai` and `*.granola.ai`) under **Allowed domains**, then start a new session.
+Any call recorder works. What matters is how transcripts reach the agent server. **Check the tool's current docs and the owner's plan before building**: API access often depends on the plan. Read its docs with your web search and web page tools.
 
 ## Order of preference
 1. **Webhook + API:** the tool notifies the agent server when a transcript is ready; the agent fetches it. Best: near real time.

@@ -39,10 +39,10 @@ Build in this order:
 7. Push, open the pull request, check the preview, merge.
 8. **Human step: OpenRouter.** Account, credits, a key with a credit limit equal to their budget, privacy settings restricting to providers that don't collect data.
 9. **Human step: Render.** New → Blueprint → their repo. Paste secrets when Render asks (database URL, OpenRouter key, Google client ID and secret, `AGENT_SECRET` which Render can generate). Then, on Vercel, set `AGENT_URL` (the Render address) and the same `AGENT_SECRET`, and redeploy.
-10. **Human step: network secret.** So you can call `/run` without seeing the secret, they add it to their cloud environment, following `accounts.md` → "Claude cloud environment" (the form differs for Team-plan members who aren't Owners). Then they start a new session.
+10. **Human step: network secret.** So you can call `/run` without seeing the secret, they add it to their cloud environment (usually **Default**), following `accounts.md` → "Claude cloud environment" (the form differs for Team-plan members who aren't Owners). Then they start a new session.
 11. Call recorder, if chosen and ready (see `call-recorders.md`); otherwise leave it until version 1 is live.
 
-**Checks:** `/health` returns 200 with schedules listed; `/run/...` without the secret returns 401; an unsigned webhook returns 401; `POST /run/morning_brief?wait=1` (from this session, the proxy adds the secret) produces a brief with valid citations; the brief shows on Today; then they switch the agent on; a deliberately broken source shows a warning.
+**Checks** (after the network secret is added; before that, this session can't reach the agent server, so ask the owner to open `/health` in their browser): `/health` returns 200 with schedules listed; `/run/...` without the secret returns 401; an unsigned webhook returns 401; `POST /run/morning_brief?wait=1` (from this session, the proxy adds the secret) produces a brief with valid citations; the brief shows on Today; then they switch the agent on; a deliberately broken source shows a warning.
 
 Tell them: keep any old version of this agent running in parallel until the new one has earned their trust.
 
