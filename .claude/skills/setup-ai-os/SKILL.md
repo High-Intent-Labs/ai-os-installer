@@ -15,7 +15,8 @@ Explain in four lines: what they'll get (a private website with their agents on 
 If they're on a Team or Enterprise plan, ask whether they're an Owner of their Claude organization (it changes one form in Phase 3).
 
 Then check, one at a time:
-1. **Their own copy.** Run `git remote -v`. If it points to the original template repository rather than their own, stop: ask them to click **Use this template** on the template page, create a **private** repository, and start a new session on that one. Ask them to confirm their copy is **Private**.
+1. **Their own copy, and private.** Run `git remote -v`. If it points to the original template repository (`High-Intent-Labs/ai-os-installer`) rather than their own, stop: ask them to click **Use this template** on the template page, create a **private** repository, and start a new session on that one.
+   Then check visibility: `gh api repos/<owner>/<repo> --jq .private` (or the built-in GitHub tools). If it says `false`, or you can't tell, stop before any question: explain that GitHub defaults new copies to Public, so anyone can read it, and give these steps: on their copy, **Settings** → scroll to **Danger Zone** → **Change visibility** → **Make private** → confirm. Check again and continue only once it says `true` (or, if you can't check, once they confirm it shows a **Private** label next to the repository name).
 2. **Network.** Try reaching a docs site they'll need (for example `curl -sI https://openrouter.ai`). If it's blocked, give them the steps in `README.md` → Step 3 (Network access **Limited**, the list in **Allowed domains**), and wait. Changes apply to new sessions, so they start a new session afterwards.
 3. **Work data.** Ask: "Will this use a work Google account or company data? If so, have you checked with your IT team?" Continue only on a yes or "it's my own".
 

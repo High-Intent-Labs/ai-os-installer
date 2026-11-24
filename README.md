@@ -11,11 +11,16 @@ Everything happens in the cloud. Nothing to download, nothing to install on your
 - If you'll use a work Google account or company data, **check with your IT team first**.
 
 ## Step 1: Make your own copy
+
+> ⚠️ **Make your copy Private.** GitHub sets new copies to **Public** by default. A public copy lets anyone on the internet read your plan, your settings and your code. Switch it to **Private** before you click Create.
+
 1. Sign in to GitHub (or sign up free at github.com).
 2. On this page, click **Use this template** → **Create a new repository**.
-3. Name it, for example `my-ai-os`. Choose **Private**. Click **Create repository**.
+3. Name it, for example `my-ai-os`.
+4. Under visibility, change **Public** to **Private**. Check it says Private.
+5. Click **Create repository**.
 
-You now have your own private copy. Everything Claude builds is saved there.
+You now have your own private copy. Everything Claude builds is saved there. (Made it public by mistake? On your copy: **Settings** → scroll to **Danger Zone** → **Change visibility** → **Make private**.)
 
 ## Step 2: Connect Claude to GitHub
 1. Go to **claude.ai/code** (or, in the Claude desktop app, open the **Code** tab).
@@ -67,4 +72,4 @@ It stops every time you need to do something yourself.
 ## Coming back later
 Go to claude.ai/code (or the Code tab), choose the **AI OS** environment and your repository, start a new session and type: **where are we?** It works from any computer, or your phone.
 
-AI OS Installer v1.2 · AI Agent Academy 4
+AI OS Installer v1.2.1 · AI Agent Academy 4
